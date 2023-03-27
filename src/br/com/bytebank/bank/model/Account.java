@@ -1,3 +1,5 @@
+package br.com.bytebank.bank.model;
+
 public abstract class Account {
     // Attributes
     protected double balance; //encapsulamento - private - so pode ser acessado dentro da classe
@@ -70,7 +72,7 @@ public abstract class Account {
 
     }
 
-    public void transfer(double value, Account accountDestiny) {
+    public void transfer(double value, Account accountDestiny) throws InsufficientBalanceException {
         this.withdraw(value);
         accountDestiny.deposit(value);
     }

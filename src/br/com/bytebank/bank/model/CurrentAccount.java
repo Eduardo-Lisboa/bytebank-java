@@ -1,3 +1,5 @@
+package br.com.bytebank.bank.model;
+
 public class CurrentAccount extends Account implements Taxable {
 
     public CurrentAccount(int agency, int number) {
