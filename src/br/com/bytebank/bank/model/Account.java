@@ -1,5 +1,10 @@
 package br.com.bytebank.bank.model;
 
+/**
+ * Classe representa a moldura de uma conta
+ * @author Eduardo Lisboa
+ */
+
 public abstract class Account {
     // Attributes
     protected double balance; //encapsulamento - private - so pode ser acessado dentro da classe
@@ -10,6 +15,11 @@ public abstract class Account {
     // estatico - pertence a classe e nao ao objeto
     static private int totalAccounts;
 
+    /**
+     * Constructor para inicializar o objeto da conta
+     * @param agency
+     * @param number
+     */
 
     // Constructor
     public Account(int agency, int number) {
@@ -64,6 +74,12 @@ public abstract class Account {
     // Methods
     public abstract void deposit(double value);
 
+    /**
+     * Valor precisa ser maior do que o saldo
+     *
+     * @param value
+     * @throws InsufficientBalanceException
+     */
     public void withdraw(double value) {
         if (this.balance < value) {
             throw new InsufficientBalanceException("Balance: " + this.balance + " Value: " + value);
