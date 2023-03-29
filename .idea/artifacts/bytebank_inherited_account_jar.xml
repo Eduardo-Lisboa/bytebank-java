@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="bytebank-inherited-account:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/bytebank_inherited_account_jar</output-path>
+    <root id="root">
+      <element id="archive" name="bytebank-inherited-account.jar">
+        <element id="module-output" name="bytebank-inherited-account" />
+      </element>
+    </root>
+  </artifact>
+</component>
