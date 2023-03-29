@@ -2,6 +2,7 @@ package br.com.bytebank.bank.model;
 
 /**
  * Classe representa a moldura de uma conta
+ *
  * @author Eduardo Lisboa
  */
 
@@ -10,13 +11,14 @@ public abstract class Account {
     protected double balance; //encapsulamento - private - so pode ser acessado dentro da classe
     private int agency;
     private int number;
-    private Account owner;
+    private Client owner;
 
     // estatico - pertence a classe e nao ao objeto
     static private int totalAccounts;
 
     /**
      * Constructor para inicializar o objeto da conta
+     *
      * @param agency
      * @param number
      */
@@ -58,14 +60,13 @@ public abstract class Account {
         this.agency = agency;
     }
 
-    public Account getOwner() {
+    public Client getOwner() {
         return owner;
     }
 
-    public void setOwner(Account owner) {
+    public void setOwner(Client owner) {
         this.owner = owner;
     }
-
 
     public static int getTotal() {
         return Account.totalAccounts;
@@ -91,6 +92,11 @@ public abstract class Account {
     public void transfer(double value, Account accountDestiny) throws InsufficientBalanceException {
         this.withdraw(value);
         accountDestiny.deposit(value);
+    }
+
+    @Override
+    public String toString() {
+        return "Numero: " + this.number + " Agency: " + this.agency + " " + owner.toString();
     }
 
 

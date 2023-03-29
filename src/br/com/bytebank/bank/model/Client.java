@@ -5,6 +5,13 @@ public class Client {
     private String cpf;
     private String profession;
 
+
+    public Client(String name, String cpf, String profession) {
+        this.name = name;
+        this.cpf = cpf;
+        this.profession = profession;
+    }
+
     public String getName() {
         return name;
     }
@@ -27,5 +34,15 @@ public class Client {
 
     public void setProfession(String profession) {
         this.profession = profession;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", professi\n" +
+                "    }on='" + profession + '\'' +
+                '}';
     }
 }
