@@ -96,24 +96,27 @@ public abstract class Account {
 
     @Override
     public boolean equals(Object ref) {
-    	Account other = (Account) ref;
+        Account other = (Account) ref;
 
-    	if(this.agency != other.agency) {
-    		return false;
-    	}
+        if (this.agency != other.agency) {
+            return false;
+        }
 
-    	if(this.number != other.number) {
-    		return false;
-    	}
+        if (this.number != other.number) {
+            return false;
+        }
 
-    	return true;
+        return true;
     }
 
     @Override
     public String toString() {
-        return "Numero: " + this.number + " Agency: " + this.agency + " " + owner.toString();
+        return "Account{" +
+                "balance=" + balance +
+                ", agency=" + agency +
+                ", number=" + number +
+                ", owner=" + owner +
+                '}';
     }
-
-
 }
 
